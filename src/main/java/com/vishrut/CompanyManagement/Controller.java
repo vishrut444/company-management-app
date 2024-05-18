@@ -43,9 +43,33 @@ public class Controller {
         return "salary updated successfully";
     }
 
-    //do above functionalities for manager also home work
+    //do above functionalities for manager also home-work
+    Map<Integer,Manager> manDb = new HashMap<>();//Db to store manager information
 
+    //API to add manager details
+    @PostMapping("/add-manager")
+    public String addManager(@RequestBody Manager manager){
+        manDb.put(manager.getManagerId(),manager);
+        return "Manager added successfully!!!";
+    }
+    //API to see manager details
+    @GetMapping("/get-manager/{id}")
+    public Manager gerManager(@PathVariable("id") int manId){
+        return manDb.get(manId);
+    }
+    //API to update manager salary
+    @PatchMapping("/update-manager-salary")
+    public String updSalary(@RequestParam("id") int manId,@RequestParam("salary") int newSalary){
+        Manager m = manDb.get(manId);
+        m.setSalary(newSalary);
+        return "salary updated successfully";
+    }
 
-
+    //API to delete manager
+    @DeleteMapping("/delete-manager")
+    public String deleteManager(@RequestParam int manId){
+        manDb.remove(manId);
+        return "Manager deleted successfully";
+    }
 
 }

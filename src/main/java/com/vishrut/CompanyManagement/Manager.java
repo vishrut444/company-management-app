@@ -5,6 +5,7 @@ public class Manager {
     private int managerId;
     private String name;
     private int age;
+    private int salary;
     private String department;
     private int noOfReportees;
 
@@ -12,10 +13,11 @@ public class Manager {
 
     }
 
-    public Manager(int managerId, String name, int age, String department, int noOfReportees) {
+    public Manager(int managerId, String name, int age, int salary, String department, int noOfReportees) {
         this.managerId = managerId;
         this.name = name;
         this.age = age;
+        this.salary = salary;
         this.department = department;
         this.noOfReportees = noOfReportees;
     }
@@ -42,6 +44,13 @@ public class Manager {
 
     public void setAge(int age) {
         this.age = age;
+    }
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     public String getDepartment() {
