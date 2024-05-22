@@ -1,4 +1,4 @@
-package com.vishrut.CompanyManagement;
+package com.vishrut.CompanyManagement.model;
 
 public class Manager {
 
